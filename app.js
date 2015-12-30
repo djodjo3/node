@@ -32,11 +32,11 @@ if (method.pathname == "/launch" )
 if (method.pathname == "/")
 	 {
 
-	 	var index = require('./pages/index.js');
+	 	var index = fs.readFileSync('./pages/index.html');
 
 	 	response.writeHead(200);
-	 	response.write (index.content);
-
+	 	//response.write (index.content);
+	 	response.write(index)
 	 }
 
 response.end();
