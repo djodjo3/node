@@ -1,6 +1,7 @@
 
-var index = {} ;
+var fs = require('fs'),
+	index = {} ;
  
-index.content='Requesting the index page\n\nRolling dice <a href="dice">here</a>"';
+index.content=fs.readFileSync('./pages/index.html');
 
 module.exports = index;
