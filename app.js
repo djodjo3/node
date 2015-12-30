@@ -22,10 +22,13 @@ https.createServer(options, function (request, response) {
 
   	console.log ('INFO: Requesting ' + request.url + ' from ' + ip);
 
-if (method.pathname == "/launch" )
+if (method.pathname == "/launcher" )
 	{
+
+		var launcher = fs.readFileSync('./pages/launcher.html');
+
 		response.writeHead(200);
-		response.write ('Launching dice\n\n');
+		response.write (launcher);
 
 	 }
 
